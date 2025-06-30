@@ -40,6 +40,14 @@
     }
   </style>
 </head>
+  <script>
+  // Gắn sự kiện click cho tất cả các ô có class slot
+  document.querySelectorAll('.slot').forEach(slot => {
+    slot.addEventListener('click', function () {
+      alert('Bạn vừa chọn ô ' + this.innerText);
+    });
+  });
+</script>
 <body>
   <h2>Sơ đồ bãi đỗ xe</h2>
   <div class="search-box">
