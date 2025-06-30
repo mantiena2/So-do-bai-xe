@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sơ đồ bãi đỗ xe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .search-box {
+      margin: 20px;
+    }
+    .row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .block {
+      display: flex;
+      margin: 0 10px;
+    }
+    .slot {
+      height: 50px;
+      margin: 2px;
+      background-color: orange;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #333;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .i-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Sơ đồ bãi đỗ xe</h2>
+  <div class="search-box">
+    <input type="text" placeholder="Nhập biển số xe hoặc mã ô..." id="searchBox" />
+  </div>
+
+  <!-- A + B -->
+  <div class="row">
+    <div class="block">
+      <!-- A01–A12 (12 ô x 48px = ~576px) -->
+      <!-- Tổng chiều dài dãy: đồng đều -->
+      <!-- width tự điều chỉnh bằng số ô -->
+      <div class="slot" style="width:48px;">A01</div>
+      <div class="slot" style="width:48px;">A02</div>
+      <div class="slot" style="width:48px;">A03</div>
+      <div class="slot" style="width:48px;">A04</div>
+      <div class="slot" style="width:48px;">A05</div>
+      <div class="slot" style="width:48px;">A06</div>
+      <div class="slot" style="width:48px;">A07</div>
+      <div class="slot" style="width:48px;">A08</div>
+      <div class="slot" style="width:48px;">A09</div>
+      <div class="slot" style="width:48px;">A10</div>
+      <div class="slot" style="width:48px;">A11</div>
+      <div class="slot" style="width:48px;">A12</div>
+    </div>
+    <div class="block">
+      <!-- B01–B12 -->
+      <div class="slot" style="width:48px;">B01</div>
+      <div class="slot" style="width:48px;">B02</div>
+      <div class="slot" style="width:48px;">B03</div>
+      <div class="slot" style="width:48px;">B04</div>
+      <div class="slot" style="width:48px;">B05</div>
+      <div class="slot" style="width:48px;">B06</div>
+      <div class="slot" style="width:48px;">B07</div>
+      <div class="slot" style="width:48px;">B08</div>
+      <div class="slot" style="width:48px;">B09</div>
+      <div class="slot" style="width:48px;">B10</div>
+      <div class="slot" style="width:48px;">B11</div>
+      <div class="slot" style="width:48px;">B12</div>
+    </div>
+  </div>
+
+  <!-- C + D -->
+  <div class="row">
+    <div class="block">
+      <!-- C01–C12 -->
+      <div class="slot" style="width:48px;">C01</div>
+      <div class="slot" style="width:48px;">C02</div>
+      <div class="slot" style="width:48px;">C03</div>
+      <div class="slot" style="width:48px;">C04</div>
+      <div class="slot" style="width:48px;">C05</div>
+      <div class="slot" style="width:48px;">C06</div>
+      <div class="slot" style="width:48px;">C07</div>
+      <div class="slot" style="width:48px;">C08</div>
+      <div class="slot" style="width:48px;">C09</div>
+      <div class="slot" style="width:48px;">C10</div>
+      <div class="slot" style="width:48px;">C11</div>
+      <div class="slot" style="width:48px;">C12</div>
+    </div>
+    <div class="block">
+      <!-- D01–D11 (11 ô x 54px = ~594px) -->
+      <div class="slot" style="width:54px;">D01</div>
+      <div class="slot" style="width:54px;">D02</div>
+      <div class="slot" style="width:54px;">D03</div>
+      <div class="slot" style="width:54px;">D04</div>
+      <div class="slot" style="width:54px;">D05</div>
+      <div class="slot" style="width:54px;">D06</div>
+      <div class="slot" style="width:54px;">D07</div>
+      <div class="slot" style="width:54px;">D08</div>
+      <div class="slot" style="width:54px;">D09</div>
+      <div class="slot" style="width:54px;">D10</div>
+      <div class="slot" style="width:54px;">D11</div>
+    </div>
+  </div>
+
+  <!-- E + F -->
+  <div class="row">
+    <div class="block">
+      <!-- E01–E12 -->
+      <div class="slot" style="width:48px;">E01</div>
+      <div class="slot" style="width:48px;">E02</div>
+      <div class="slot" style="width:48px;">E03</div>
+      <div class="slot" style="width:48px;">E04</div>
+      <div class="slot" style="width:48px;">E05</div>
+      <div class="slot" style="width:48px;">E06</div>
+      <div class="slot" style="width:48px;">E07</div>
+      <div class="slot" style="width:48px;">E08</div>
+      <div class="slot" style="width:48px;">E09</div>
+      <div class="slot" style="width:48px;">E10</div>
+      <div class="slot" style="width:48px;">E11</div>
+      <div class="slot" style="width:48px;">E12</div>
+    </div>
+    <div class="block">
+      <!-- F01–F11 -->
+      <div class="slot" style="width:54px;">F01</div>
+      <div class="slot" style="width:54px;">F02</div>
+      <div class="slot" style="width:54px;">F03</div>
+      <div class="slot" style="width:54px;">F04</div>
+      <div class="slot" style="width:54px;">F05</div>
+      <div class="slot" style="width:54px;">F06</div>
+      <div class="slot" style="width:54px;">F07</div>
+      <div class="slot" style="width:54px;">F08</div>
+      <div class="slot" style="width:54px;">F09</div>
+      <div class="slot" style="width:54px;">F10</div>
+      <div class="slot" style="width:54px;">F11</div>
+    </div>
+  </div>
+
+  <!-- G + H -->
+  <div class="row">
+    <div class="block">
+      <!-- G01–G12 -->
+      <div class="slot" style="width:48px;">G01</div>
+      <div class="slot" style="width:48px;">G02</div>
+      <div class="slot" style="width:48px;">G03</div>
+      <div class="slot" style="width:48px;">G04</div>
+      <div class="slot" style="width:48px;">G05</div>
+      <div class="slot" style="width:48px;">G06</div>
+      <div class="slot" style="width:48px;">G07</div>
+      <div class="slot" style="width:48px;">G08</div>
+      <div class="slot" style="width:48px;">G09</div>
+      <div class="slot" style="width:48px;">G10</div>
+      <div class="slot" style="width:48px;">G11</div>
+      <div class="slot" style="width:48px;">G12</div>
+    </div>
+    <div class="block">
+      <!-- H01–H10 (10 ô x 60px = ~600px) -->
+      <div class="slot" style="width:60px;">H01</div>
+      <div class="slot" style="width:60px;">H02</div>
+      <div class="slot" style="width:60px;">H03</div>
+      <div class="slot" style="width:60px;">H04</div>
+      <div class="slot" style="width:60px;">H05</div>
+      <div class="slot" style="width:60px;">H06</div>
+      <div class="slot" style="width:60px;">H07</div>
+      <div class="slot" style="width:60px;">H08</div>
+      <div class="slot" style="width:60px;">H09</div>
+      <div class="slot" style="width:60px;">H10</div>
+    </div>
+  </div>
+ <!-- DÃY I - 1 hàng ngang, mỗi ô 54px, tổng rộng 1458px, căn sát lề phải -->
+<div class="i-row" style="display: flex; flex-wrap: nowrap; justify-content: flex-end; width: 1458px; margin: 30px auto;">
+  <div class="slot" style="width:54px;">I01</div>
+  <div class="slot" style="width:54px;">I02</div>
+  <div class="slot" style="width:54px;">I03</div>
+  <div class="slot" style="width:54px;">I04</div>
+  <div class="slot" style="width:54px;">I05</div>
+  <div class="slot" style="width:54px;">I06</div>
+  <div class="slot" style="width:54px;">I07</div>
+  <div class="slot" style="width:54px;">I08</div>
+  <div class="slot" style="width:54px;">I09</div>
+  <div class="slot" style="width:54px;">I10</div>
+  <div class="slot" style="width:54px;">I11</div>
+  <div class="slot" style="width:54px;">I12</div>
+  <div class="slot" style="width:54px;">I13</div>
+  <div class="slot" style="width:54px;">I14</div>
+  <div class="slot" style="width:54px;">I15</div>
+  <div class="slot" style="width:54px;">I16</div>
+  <div class="slot" style="width:54px;">I17</div>
+  <div class="slot" style="width:54px;">I18</div>
+  <div class="slot" style="width:54px;">I19</div>
+  <div class="slot" style="width:54px;">I20</div>
+  <div class="slot" style="width:54px;">I21</div>
+  <div class="slot" style="width:54px;">I22</div>
+  <div class="slot" style="width:54px;">I23</div>
+  <div class="slot" style="width:54px;">I24</div>
+  <div class="slot" style="width:54px;">I25</div>
+  <div class="slot" style="width:54px;">I26</div>
+  <div class="slot" style="width:54px;">I27</div>
+</div>
+</body>
+</html>
