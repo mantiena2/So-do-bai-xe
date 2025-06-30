@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -7,77 +6,112 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h2 {
       text-align: center;
     }
-    #parkingMap {
-      background: url('so_do_bai_xe_nen.jpg') no-repeat center center;
-      background-size: contain;
-      width: 100%;
-      max-width: 1200px;
-      height: 800px;
-      position: relative;
-      margin: auto;
-      border: 1px solid #ccc;
+    .search-box {
+      text-align: center;
+      margin-bottom: 20px;
     }
-    .spot {
-      position: absolute;
-      width: 45px;
-      height: 80px;
-      background-color: rgba(255, 255, 0, 0.25);
-      border: 1px solid #888;
-      cursor: pointer;
-    }
-    .tooltip {
-      position: absolute;
-      background: #fff;
-      border: 1px solid #000;
-      padding: 5px;
-      display: none;
-      z-index: 10;
-    }
-    #searchBox {
-      margin: 20px auto;
+    input[type="text"] {
       padding: 10px;
       width: 300px;
+      font-size: 16px;
+    }
+    .parking-lot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+    .slot {
+      width: 60px;
+      height: 100px;
+      background-color: #ffc107;
+      border: 2px solid #444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .highlight {
+      background-color: #4caf50 !important;
+      color: #fff;
     }
   </style>
 </head>
 <body>
   <h2>Sơ đồ bãi đỗ xe</h2>
-  <input type="text" id="searchBox" placeholder="Nhập biển số xe để tìm vị trí…">
-  <div id="parkingMap">
-    <div class="spot" style="top: 20px; left: 20px;" data-plate="30-22"></div><div class="spot" style="top: 20px; left: 80px;" data-plate="30-17"></div><div class="spot" style="top: 20px; left: 140px;" data-plate="40-67"></div><div class="spot" style="top: 20px; left: 200px;" data-plate="45-56"></div><div class="spot" style="top: 20px; left: 260px;" data-plate="34-33"></div><div class="spot" style="top: 20px; left: 320px;" data-plate="23-56"></div><div class="spot" style="top: 20px; left: 380px;" data-plate="33-55"></div><div class="spot" style="top: 20px; left: 440px;" data-plate="34-54"></div><div class="spot" style="top: 20px; left: 500px;" data-plate="32-34"></div><div class="spot" style="top: 20px; left: 560px;" data-plate="44-44"></div><div class="spot" style="top: 20px; left: 620px;" data-plate="44-43"></div><div class="spot" style="top: 20px; left: 680px;" data-plate="34-32"></div><div class="spot" style="top: 20px; left: 740px;" data-plate="32-33"></div><div class="spot" style="top: 20px; left: 800px;" data-plate="45-43"></div><div class="spot" style="top: 20px; left: 860px;" data-plate="26-27"></div><div class="spot" style="top: 20px; left: 920px;" data-plate="26-28"></div><div class="spot" style="top: 20px; left: 980px;" data-plate="26-29"></div><div class="spot" style="top: 20px; left: 1040px;" data-plate="26-30"></div><div class="spot" style="top: 20px; left: 1100px;" data-plate="31-22"></div><div class="spot" style="top: 20px; left: 1160px;" data-plate="31-22"></div><div class="spot" style="top: 120px; left: 20px;" data-plate="25-33"></div><div class="spot" style="top: 120px; left: 80px;" data-plate="25-22"></div><div class="spot" style="top: 120px; left: 140px;" data-plate="23-77"></div><div class="spot" style="top: 120px; left: 200px;" data-plate="21-77"></div><div class="spot" style="top: 120px; left: 260px;" data-plate="31-78"></div><div class="spot" style="top: 120px; left: 320px;" data-plate="31-77"></div><div class="spot" style="top: 120px; left: 380px;" data-plate="31-76"></div><div class="spot" style="top: 120px; left: 440px;" data-plate="31-75"></div><div class="spot" style="top: 120px; left: 500px;" data-plate="31-74"></div><div class="spot" style="top: 120px; left: 560px;" data-plate="31-70"></div><div class="spot" style="top: 120px; left: 620px;" data-plate="31-69"></div><div class="spot" style="top: 120px; left: 680px;" data-plate="31-68"></div><div class="spot" style="top: 120px; left: 740px;" data-plate="31-67"></div><div class="spot" style="top: 120px; left: 800px;" data-plate="31-66"></div><div class="spot" style="top: 120px; left: 860px;" data-plate="31-75"></div><div class="spot" style="top: 120px; left: 920px;" data-plate="31-65"></div><div class="spot" style="top: 120px; left: 980px;" data-plate="31-66"></div><div class="spot" style="top: 120px; left: 1040px;" data-plate="31-64"></div><div class="spot" style="top: 120px; left: 1100px;" data-plate="31-63"></div><div class="spot" style="top: 120px; left: 1160px;" data-plate="31-62"></div>
-    <div class="tooltip" id="tooltip"></div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Nhập biển số xe hoặc mã ô...">
+  </div>
+
+  <div class="parking-lot" id="parkingLot">
+    <!-- Dãy 1 -->
+    <div class="row">
+      <div class="slot" id="A01" onclick="showInfo('A01')">A01</div>
+      <div class="slot" id="B01" onclick="showInfo('B01')">B01</div>
+    </div>
+    <!-- Dãy 2 -->
+    <div class="row">
+      <div class="slot" id="A02" onclick="showInfo('A02')">A02</div>
+      <div class="slot" id="B02" onclick="showInfo('B02')">B02</div>
+    </div>
+    <!-- Dãy 3 -->
+    <div class="row">
+      <div class="slot" id="A03" onclick="showInfo('A03')">A03</div>
+      <div class="slot" id="B03" onclick="showInfo('B03')">B03</div>
+    </div>
+    <!-- Dãy 4 -->
+    <div class="row">
+      <div class="slot" id="A04" onclick="showInfo('A04')">A04</div>
+      <div class="slot" id="B04" onclick="showInfo('B04')">B04</div>
+    </div>
+    <!-- Dãy ngang cuối -->
+    <div class="row">
+      <!-- 27 ô ngang -->
+      <script>
+        for (let i = 1; i <= 27; i++) {
+          document.write(`<div class='slot' id='H${i.toString().padStart(2, '0')}' onclick="showInfo('H${i.toString().padStart(2, '0')}')">H${i.toString().padStart(2, '0')}</div>`);
+        }
+      </script>
+    </div>
   </div>
 
   <script>
-    const spots = document.querySelectorAll('.spot');
-    const tooltip = document.getElementById('tooltip');
-    const searchBox = document.getElementById('searchBox');
+    const slotData = {
+      A01: "Biển số: 30A-123.45", B01: "Biển số: 29B-456.78",
+      A02: "Biển số: 30A-999.88", B02: "Biển số: 89A-123.00",
+      A03: "Biển số: 77A-987.65", B03: "Biển số: 56B-000.01",
+      A04: "Biển số: 12C-345.67", B04: "Biển số: 88A-222.33",
+      H01: "Biển số: 50F-111.11", H02: "Biển số: 50F-222.22"
+    };
 
-    spots.forEach(spot => {
-      spot.addEventListener('click', (e) => {
-        const plate = spot.dataset.plate;
-        tooltip.style.left = (e.pageX + 10) + 'px';
-        tooltip.style.top = (e.pageY + 10) + 'px';
-        tooltip.innerText = "Biển số: " + plate;
-        tooltip.style.display = 'block';
-      });
-    });
+    function showInfo(id) {
+      const info = slotData[id] || `Ô ${id} chưa có thông tin.`;
+      alert(info);
+    }
 
-    document.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('spot')) {
-        tooltip.style.display = 'none';
-      }
-    });
-
-    searchBox.addEventListener('input', () => {
-      const query = searchBox.value.trim().toLowerCase();
-      spots.forEach(spot => {
-        if (spot.dataset.plate.toLowerCase().includes(query)) {
-          spot.style.backgroundColor = 'rgba(0,255,0,0.4)';
+    document.getElementById("search").addEventListener("input", function() {
+      const value = this.value.toLowerCase();
+      document.querySelectorAll(".slot").forEach(slot => {
+        const id = slot.id.toLowerCase();
+        const info = (slotData[slot.id] || '').toLowerCase();
+        if (id.includes(value) || info.includes(value)) {
+          slot.classList.add("highlight");
         } else {
-          spot.style.backgroundColor = 'rgba(255,255,0,0.25)';
+          slot.classList.remove("highlight");
         }
       });
     });
