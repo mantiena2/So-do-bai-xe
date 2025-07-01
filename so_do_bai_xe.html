@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Sơ đồ bãi đỗ xe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 1500px;
+      margin: auto;
+      padding: 20px;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between; gap: 40px;
+      margin-bottom: 30px;
+    }
+    .block {
+      display: flex;
+      flex: 1;
+      justify-content: space-evenly;
+    }
+    .slot {
+      flex: 1;
+      max-width: 60px;
+      height: 50px;
+      margin: 2px;
+      background: orange;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      border: 1px solid #333;
+      cursor: pointer;
+    }
+    .i-row {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-end; flex-grow: 3;
+      gap: 2px;
+    }
+    input[type="text"] {
+      padding: 6px;
+      width: 300px;
+    }
+    button {
+      padding: 6px 10px;
+    }
+.gate-indicator {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  background-color: #ffcc00;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 999;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gate-indicator .arrow {
+  font-size: 20px;
+}
+  </style>
+
+
+</head>
+<body>
+<body>
+  <div class="gate-indicator">
+    <span>Cổng vào</span>
+    <span class="arrow">⬇</span>
+  </div>
+
+  <h2 style="text-align:center;">SƠ ĐỒ KHU KỸ THUẬT</h2>
+<p style="text-align:center; font-style: italic; font-size: 16px; margin-top: -10px;">
+  (Dãy A,B,C,D,E,F,G,H,I tương ứng với các nhà xe 2,1,3,4,6,5,8,9,7)
+</p>
+  <div style="text-align:center; margin-bottom:20px;">
+    <input id="searchInput" type="text" placeholder="Nhập biển số hoặc mã ô...">
+    <button onclick="searchSlot()">Tìm</button>
+  </div>
+  <div class="container">
+    <!-- A & B -->
+    <div class="row">
+      <div class="block">
+       
+<!-- Dãy A -->
+<div class="slot" onclick="alert('Ô A01 – Biển số: 40-88')" data-plate="40-88">A01</div>
+<div class="slot" onclick="alert('Ô A02 – Biển số: 27-24')" data-plate="27-24">A02</div>
+<div class="slot" onclick="alert('Ô A03 – Biển số: 45-22')" data-plate="45-22">A03</div>
+<div class="slot" onclick="alert('Ô A04 – Biển số: L244')" data-plate="L244">A04</div>
+<div class="slot" onclick="alert('Ô A05 – Biển số: X2302')" data-plate="X2302">A05</div>
+<div class="slot" onclick="alert('Ô A06 – Biển số: X2309')" data-plate="X2309">A06</div>
+<div class="slot" onclick="alert('Ô A07 – Biển số: D388')" data-plate="D388">A07</div>
+<div class="slot" onclick="alert('Ô A08 – Biển số: D353,D320')" data-plate="D353,D320">A08</div>
+<div class="slot" onclick="alert('Ô A09 – Biển số: D111,D259')" data-plate="D111,D259">A09</div>
+<div class="slot" onclick="alert('Ô A10 – Biển số: D151,D436')" data-plate="D151,D436">A10</div>
+<div class="slot" onclick="alert('Ô A11 – Biển số: D201,D433')" data-plate="D201,D433">A11</div>
+<div class="slot" onclick="alert('Ô A12 – Biển số: D273,D441')" data-plate="D273,D441">A12</div>
+      </div>
+      <div class="block">
+       
+<div class="slot" onclick="alert('Ô B01 – Biển số: 21-82')" data-plate="21-82">B01</div>
+<div class="slot" onclick="alert('Ô B02 – Biển số: R002')" data-plate="R002">B02</div>
+<div class="slot" onclick="alert('Ô B03 – Biển số: D507')" data-plate="D507">B03</div>
+<div class="slot" onclick="alert('Ô B04 – Biển số: D510')" data-plate="D510">B04</div>
+<div class="slot" onclick="alert('Ô B05 – Biển số: 45-90')" data-plate="45-90">B05</div>
+<div class="slot" onclick="alert('Ô B06 – Biển số: 39-44')" data-plate="39-44">B06</div>
+<div class="slot" onclick="alert('Ô B07 – Biển số: 31-76,D236')" data-plate="31-76,D236">B07</div>
+<div class="slot" onclick="alert('Ô B08 – Biển số: 28-80')" data-plate="28-80">B08</div>
+<div class="slot" onclick="alert('Ô B09 – Biển số: 28-79')" data-plate="28-79">B09</div>
+<div class="slot" onclick="alert('Ô B10 – Biển số: 28-78')" data-plate="28-78">B10</div>
+<div class="slot" onclick="alert('Ô B11 – Biển số: 28-77')" data-plate="28-77">B11</div>
+<div class="slot" onclick="alert('Ô B12 – Biển số: KT')" data-plate="KT">B12</div>
+      </div>
+    </div>
+    <!-- C & D -->
+    <div class="row">
+      <div class="block">
+        
+<div class="slot" onclick="alert('Ô C01 – Biển số: 21-30')" data-plate="21-30">C01</div>
+<div class="slot" onclick="alert('Ô C02 – Biển số: 31-50')" data-plate="31-50">C02</div>
+<div class="slot" onclick="alert('Ô C03 – Biển số: 31-14')" data-plate="31-14">C03</div>
+<div class="slot" onclick="alert('Ô C04 – Biển số: 27-14')" data-plate="27-14">C04</div>
+<div class="slot" onclick="alert('Ô C05 – Biển số: 31-78')" data-plate="31-78">C05</div>
+<div class="slot" onclick="alert('Ô C06 – Biển số: 31-77')" data-plate="31-77">C06</div>
+<div class="slot" onclick="alert('Ô C07 – Biển số: 21-54')" data-plate="21-54">C07</div>
+<div class="slot" onclick="alert('Ô C08 – Biển số: 43-01')" data-plate="43-01">C08</div>
+<div class="slot" onclick="alert('Ô C09 – Biển số: 43-79')" data-plate="43-79">C09</div>
+<div class="slot" onclick="alert('Ô C10 – Biển số: 43-11')" data-plate="43-11">C10</div>
+<div class="slot" onclick="alert('Ô C11 – Biển số: 26-99')" data-plate="26-99">C11</div>
+<div class="slot" onclick="alert('Ô C12 – Biển số: 29-92')" data-plate="29-92">C12</div>
+
+      </div>
+      <div class="block">
+       
+<!-- Dãy D -->
+<div class="slot" onclick="alert('Ô D01 – Biển số: 21-53')" data-plate="21-53">D01</div>
+<div class="slot" onclick="alert('Ô D02 – Biển số: 32-53')" data-plate="32-53">D02</div>
+<div class="slot" onclick="alert('Ô D03 – Biển số: 26-83')" data-plate="26-83">D03</div>
+<div class="slot" onclick="alert('Ô D04 – Biển số: 26-85')" data-plate="26-85">D04</div>
+<div class="slot" onclick="alert('Ô D05 – Biển số: 26-86')" data-plate="26-86">D05</div>
+<div class="slot" onclick="alert('Ô D06 – Biển số: 42-20')" data-plate="42-20">D06</div>
+<div class="slot" onclick="alert('Ô D07 – Biển số: 26-72')" data-plate="26-72">D07</div>
+<div class="slot" onclick="alert('Ô D08 – Biển số: 27-27')" data-plate="27-27">D08</div>
+<div class="slot" onclick="alert('Ô D09 – Biển số: 26-76')" data-plate="26-76">D09</div>
+<div class="slot" onclick="alert('Ô D10 – Biển số: 37-31')" data-plate="37-31">D10</div>
+<div class="slot" onclick="alert('Ô D11 – Biển số: KT')" data-plate="KT">D11</div>
+      </div>
+    </div>
+    <!-- E & F -->
+    <div class="row">
+      <div class="block">
+<div class="slot" onclick="alert('Ô E01 – Biển số: 39-15')" data-plate="39-15">E01</div>
+<div class="slot" onclick="alert('Ô E02 – Biển số: 43-04')" data-plate="43-04">E02</div>
+<div class="slot" onclick="alert('Ô E03 – Biển số: 44-94')" data-plate="44-94">E03</div>
+<div class="slot" onclick="alert('Ô E04 – Biển số: 44-69')" data-plate="44-69">E04</div>
+<div class="slot" onclick="alert('Ô E05 – Biển số: 43-52')" data-plate="43-52">E05</div>
+<div class="slot" onclick="alert('Ô E06 – Biển số: 40-29')" data-plate="40-29">E06</div>
+<div class="slot" onclick="alert('Ô E07 – Biển số: 40-79')" data-plate="40-79">E07</div>
+<div class="slot" onclick="alert('Ô E08 – Biển số: 42-53')" data-plate="42-53">E08</div>
+<div class="slot" onclick="alert('Ô E09 – Chưa có biển số')" data-plate="">E09</div>
+<div class="slot" onclick="alert('Ô E10 – Chưa có biển số')" data-plate="">E10</div>
+<div class="slot" onclick="alert('Ô E11 – Chưa có biển số')" data-plate="">E11</div>
+<div class="slot" onclick="alert('Ô E12 – Chưa có biển số')" data-plate="">E12</div>
+      </div>
+      <div class="block">
+        
+<div class="slot" onclick="alert('Ô F01 – Biển số: X2240,X2233')" data-plate="X2240,X2233">F01</div>
+<div class="slot" onclick="alert('Ô F02 – Biển số: U2254')" data-plate="U2254">F02</div>
+<div class="slot" onclick="alert('Ô F03 – Biển số: U2213')" data-plate="U2213">F03</div>
+<div class="slot" onclick="alert('Ô F04 – Biển số: U2214')" data-plate="U2214">F04</div>
+<div class="slot" onclick="alert('Ô F05 – Biển số: U2004')" data-plate="U2004">F05</div>
+<div class="slot" onclick="alert('Ô F06 – Biển số: U1030')" data-plate="U1030">F06</div>
+<div class="slot" onclick="alert('Ô F07 – Biển số: U1034')" data-plate="U1034">F07</div>
+<div class="slot" onclick="alert('Ô F08 – Biển số: U802')" data-plate="U802">F08</div>
+<div class="slot" onclick="alert('Ô F09 – Biển số: U785')" data-plate="U785">F09</div>
+<div class="slot" onclick="alert('Ô F10 – Biển số: U977')" data-plate="U977">F10</div>
+<div class="slot" onclick="alert('Ô F11 – Biển số: U983')" data-plate="U983">F11</div>
+      </div>
+    </div>
+    <!-- G & H -->
+    <div class="row">
+      <div class="block">
+        
+<div class="slot" onclick="alert('Ô G01 – Biển số: 44-71')" data-plate="44-71">G01</div>
+<div class="slot" onclick="alert('Ô G02 – Biển số: 44-70')" data-plate="44-70">G02</div>
+<div class="slot" onclick="alert('Ô G03 – Biển số: 44-06')" data-plate="44-06">G03</div>
+<div class="slot" onclick="alert('Ô G04 – Biển số: 44-05')" data-plate="44-05">G04</div>
+<div class="slot" onclick="alert('Ô G05 – Biển số: 45-77')" data-plate="45-77">G05</div>
+<div class="slot" onclick="alert('Ô G06 – Biển số: 45-47')" data-plate="45-47">G06</div>
+<div class="slot" onclick="alert('Ô G07 – Biển số: 45-45')" data-plate="45-45">G07</div>
+<div class="slot" onclick="alert('Ô G08 – Biển số: 45-02')" data-plate="45-02">G08</div>
+<div class="slot" onclick="alert('Ô G09 – Biển số: 45-01')" data-plate="45-01">G09</div>
+<div class="slot" onclick="alert('Ô G10 – Biển số: 44-59')" data-plate="44-59">G10</div>
+<div class="slot" onclick="alert('Ô G11 – Biển số: 43-96')" data-plate="43-96">G11</div>
+<div class="slot" onclick="alert('Ô G12 – Biển số: 43-88')" data-plate="43-88">G12</div>
+      </div>
+      <div class="block">
+       
+<div class="slot" onclick="alert('Ô H01 – Biển số: 45-29')" data-plate="45-29">H01</div>
+<div class="slot" onclick="alert('Ô H02 – Biển số: 45-33')" data-plate="45-33">H02</div>
+<div class="slot" onclick="alert('Ô H03 – Biển số: 46-14')" data-plate="46-14">H03</div>
+<div class="slot" onclick="alert('Ô H04 – Biển số: 46-21')" data-plate="46-21">H04</div>
+<div class="slot" onclick="alert('Ô H05 – Biển số: 31-39')" data-plate="31-39">H05</div>
+<div class="slot" onclick="alert('Ô H06 – Biển số: 31-40')" data-plate="31-40">H06</div>
+<div class="slot" onclick="alert('Ô H07 – Biển số: 31-41')" data-plate="31-41">H07</div>
+<div class="slot" onclick="alert('Ô H08 – Biển số: 31-42')" data-plate="31-42">H08</div>
+<div class="slot" onclick="alert('Ô H09 – Chưa có biển số')" data-plate="">H09</div>
+<div class="slot" onclick="alert('Ô H10 – Chưa có biển số')" data-plate="">H10</div>
+      </div>
+    </div>
+    <!-- I -->
+    <div class="row">
+      <div class="i-row">
+      
+<div class="slot" onclick="alert('Ô I01 – Chưa có biển số')" data-plate="">I01</div>
+<div class="slot" onclick="alert('Ô I02 – Biển số: 42-41-09,P013')" data-plate="42-41-09,P013">I02</div>
+<div class="slot" onclick="alert('Ô I03 – Biển số: R085')" data-plate="R085">I03</div>
+<div class="slot" onclick="alert('Ô I04 – Biển số: 43-34')" data-plate="43-34">I04</div>
+<div class="slot" onclick="alert('Ô I05 – Biển số: BM031')" data-plate="BM031">I05</div>
+<div class="slot" onclick="alert('Ô I06 – Biển số: 45-84')" data-plate="45-84">I06</div>
+<div class="slot" onclick="alert('Ô I07 – Biển số: 39-39, 26-29')" data-plate="39-39, 26-29">I07</div>
+<div class="slot" onclick="alert('Ô I08 – Biển số: 21-68, 39-37')" data-plate="21-68, 39-37">I08</div>
+<div class="slot" onclick="alert('Ô I09 – Biển số: D504, E131')" data-plate="D504, E131">I09</div>
+<div class="slot" onclick="alert('Ô I10 – Biển số: D503')" data-plate="D503">I10</div>
+<div class="slot" onclick="alert('Ô I11 – Biển số: X236')" data-plate="X236">I11</div>
+<div class="slot" onclick="alert('Ô I12 – Biển số: X235')" data-plate="X235">I12</div>
+<div class="slot" onclick="alert('Ô I13 – Biển số: X2183,X2258')" data-plate="X2183,X2258">I13</div>
+<div class="slot" onclick="alert('Ô I14 – Biển số: X849,S857')" data-plate="X849,S857">I14</div>
+<div class="slot" onclick="alert('Ô I15 – Biển số: S099, S891')" data-plate="S099, S891">I15</div>
+<div class="slot" onclick="alert('Ô I16 – Biển số: L157')" data-plate="L157">I16</div>
+<div class="slot" onclick="alert('Ô I17 – Biển số: L132, L131')" data-plate="L132, L131">I17</div>
+<div class="slot" onclick="alert('Ô I18 – Biển số: L199')" data-plate="L199">I18</div>
+<div class="slot" onclick="alert('Ô I19 – Biển số: 41-47, L208')" data-plate="41-47, L208">I19</div>
+<div class="slot" onclick="alert('Ô I20 – Biển số: 45-81, 41-44')" data-plate="45-81, 41-44">I20</div>
+<div class="slot" onclick="alert('Ô I21 – Biển số: 44-90')" data-plate="44-90">I21</div>
+<div class="slot" onclick="alert('Ô I22 – Biển số: 44-46')" data-plate="44-46">I22</div>
+<div class="slot" onclick="alert('Ô I23 – Biển số: 44-47, 21-55')" data-plate="44-47, 21-55">I23</div>
+<div class="slot" onclick="alert('Ô I24 – Biển số: 37-87, 44-72')" data-plate="37-87, 44-72">I24</div>
+<div class="slot" onclick="alert('Ô I25 – Biển số: 39-14')" data-plate="39-14">I25</div>
+<div class="slot" onclick="alert('Ô I26 – Biển số: 45-51, 45-60')" data-plate="45-51, 45-60">I26</div>
+<div class="slot" onclick="alert('Ô I27 – Biển số: KT')" data-plate="KT">I27</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+ 
+
+   function searchSlot() {
+  let query = document.getElementById("searchInput").value.trim().toUpperCase().replace(/\s+/g, '');
+  let found = false;
+  const slots = document.querySelectorAll('.slot');
+  slots.forEach(slot => {
+    slot.style.outline = '';
+    const plate = slot.dataset.plate.replace(/\s+/g, '').toUpperCase();
+    const code = slot.innerText.replace(/\s+/g, '').toUpperCase();
+    if (code.includes(query) || plate.includes(query)) {
+      slot.style.outline = '3px solid red';
+      slot.scrollIntoView({behavior: 'smooth', block: 'center'});
+      found = true;
+    }
+  });
+  if (!found) alert("Không tìm thấy ô phù hợp.");
+}
+
+  </script>
+</body>
+</html>
